@@ -1,0 +1,96 @@
+package com.academy.techcenture.step_definitions;
+
+import com.academy.techcenture.config.Driver;
+import com.academy.techcenture.pages.HomePage;
+import com.academy.techcenture.pages.LoginPage;
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import org.openqa.selenium.WebDriver;
+
+public class ContactUsStepDefinitions {
+
+    private WebDriver driver;
+    private HomePage homepage;
+    private LoginPage loginPage;
+
+    @Given("^user is on the home page$")
+    public void user_is_on_the_home_page() throws Throwable {
+        driver = Driver.getDriver();
+        homepage = new HomePage(driver);
+        homepage.navigateToHomePage();
+    }
+
+    @When("^user clicks on the sign in link$")
+    public void user_clicks_on_the_sign_in_link() throws Throwable {
+        homepage.clickSingInLink();
+    }
+
+    @Then("^user should be navigated to Login Page$")
+    public void user_should_be_navigated_to_Login_Page() throws Throwable {
+        loginPage = new LoginPage(driver);
+        loginPage.verifyUserIsOnLoginPage();
+    }
+
+    @Then("^user logins with \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void user_logins_with_and(String username, String password) throws Throwable {
+        loginPage.enterUserName(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginBtn();
+    }
+
+    @Then("^user clicks on Contact Us link$")
+    public void user_clicks_on_Contact_Us_link() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^user should be navigated to Contact Us Page$")
+    public void user_should_be_navigated_to_Contact_Us_Page() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^user selects \"([^\"]*)\" as a subject heading$")
+    public void user_selects_as_a_subject_heading(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^user email \"([^\"]*)\" should be auto-populated$")
+    public void user_email_should_be_auto_populated(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^user should pick \"([^\"]*)\" from the reference dropdown$")
+    public void user_should_pick_from_the_reference_dropdown(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^user should attach a picture from path \"([^\"]*)\"$")
+    public void user_should_attach_a_picture_from_path(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^user should enter \"([^\"]*)\" in the message input$")
+    public void user_should_enter_in_the_message_input(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @When("^user clicks on send button$")
+    public void user_clicks_on_send_button() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^user should see success message \"([^\"]*)\"$")
+    public void user_should_see_success_message(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+}
