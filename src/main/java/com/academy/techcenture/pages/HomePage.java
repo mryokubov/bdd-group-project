@@ -1,7 +1,6 @@
 package com.academy.techcenture.pages;
 
 import com.academy.techcenture.config.ConfigReader;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +24,7 @@ public class HomePage extends BasePage{
 
     @FindBy(className = "logout")
     protected WebElement signOutLink;
+
     @FindBy(xpath = "//img[contains(@class,'logo')]")
     private WebElement logo;
 

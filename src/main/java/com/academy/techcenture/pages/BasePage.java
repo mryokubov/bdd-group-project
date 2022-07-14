@@ -24,4 +24,7 @@ public class BasePage {
         this.actions = new Actions(this.driver);
         PageFactory.initElements(driver, this);
     }
+
+
+
 }

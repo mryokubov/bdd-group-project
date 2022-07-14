@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import java.io.File;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -58,11 +61,55 @@ public class ContactUsPage extends HomePage{
     public void verifyEmailAutoPopulated(String email){
         assertEquals( "Emails do not match", email, emailInput.getAttribute("value"));
 
+    }
+
+    public void pickOrderReference(String reference){
+        Select select = new Select(orderRefDropDown);
+        List<WebElement> options = select.getOptions();
+        for (int i = 0; i < options.size(); i++) {
+            if (options.get(i).getText().startsWith(reference)){
+                options.get(i).click();
+                break;
+            }
+        }
+    }
+
+    public void attachPicturePath(String picture){
+        File f = new File(picture);
+        String absolute = f.getAbsolutePath();
+        attachFileInput.sendKeys(absolute);
 
 
     }
 
 
+    public void enterMessageInput(String message){
+        assertTrue("is not displayed", messageArea.isDisplayed());
+        messageArea.sendKeys(message);
+
+    }
+
+    public void clickSendBtn(){
+        assertTrue("button is not enabled", sendBtn.isEnabled());
+        actions.click(sendBtn).perform();
+    }
+
+    public void seeSuccessMsg(String alert){
+        assertEquals("alert message is not displayed", alert, successAlertMessage.isDisplayed());
+
+    }
+
+
+
+    public void enterUnRegisteredEmail(String email){
+        assertTrue("input email is not displayed", emailInput.isDisplayed());
+        emailInput.sendKeys(email);
+    }
+
+    public void enterUnRegisteredReference(String reference){
+        assertTrue("input reference is not displayed", orderRefDropDown.isDisplayed());
+        orderRefDropDown.sendKeys(reference);
+    }
 }
 
 

@@ -1,5 +1,6 @@
 Feature: Contact us functionality
 
+ @test1
   Scenario Outline: Test contact us as a registered customer
     Given user is on the home page
     When user clicks on the sign in link
@@ -17,8 +18,9 @@ Feature: Contact us functionality
 
     Examples:
       | email                 | password | heading          | reference | picture                           | message                                                            | alert                                                |
-      | kevinlee123@gmail.com | Kevin123 | Customer service | CDIAWIJTG | src/java/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
-      | kevinlee123@gmail.com | Kevin123 | Webmaster        | SULXKZPMN | src/java/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
+      | kevinlee123@gmail.com | Kevin123 | Customer service | LAYJDCXBU | src/main/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
+      | kevinlee123@gmail.com | Kevin123 | Webmaster        | LAYJDCXBU | src/main/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
+
 
   Scenario Outline: Test contact us as an un-registered customer
     Given user is on the home page
@@ -52,8 +54,8 @@ Feature: Contact us functionality
 
     Examples:
       | email                 | heading          | reference | picture                           | message                                                            | alert                        |
-      | kevinlee123           | Customer service | CDIAWIJTG | src/java/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Invalid email address.       |
-      | kevinlee123@gmail.com | Webmaster        | SULXKZPMN | src/java/resources/pics/error.png |                                                                    | The message cannot be blank. |
+      | kevinlee123           | Customer service | CDIAWIJTG | src/main/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Invalid email address.       |
+      | kevinlee123@gmail.com | Webmaster        | SULXKZPMN | src/main/resources/pics/error.png |                                                                    | The message cannot be blank. |
 
 
   Scenario Outline: Test contact us as a registered negative scenario
