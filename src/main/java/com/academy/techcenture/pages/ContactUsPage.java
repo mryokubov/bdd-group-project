@@ -72,16 +72,13 @@ public class ContactUsPage extends HomePage {
         WebElement orderRef = driver.findElement(By.xpath("//select[@name='id_order']/option[contains(text(), '" + reference + "')]"));
         orderRef.click();
         assertEquals("Order reference not matching", reference, orderRef.getText().substring(0, reference.length()));
-
     }
 
     public void verifyAttachedPic(String picture) {
-
-        File file=new File(picture);
+        File file = new File(picture);
         String fileName = file.getName();
         attachFileInput.sendKeys(file.getAbsolutePath());
-        Assert.assertEquals("Picture is not taken from src/... folder", fileName,driver.findElement(By.xpath("//span[@class='filename']")).getText());
-
+        Assert.assertEquals("Picture is not taken from src/... folder", fileName, driver.findElement(By.xpath("//span[@class='filename']")).getText());
     }
 
     public void enterMessageInput(String message) {
@@ -100,6 +97,7 @@ public class ContactUsPage extends HomePage {
     public void verifyUnSuccessAlertMessage(String alert) {
         assertEquals("Alert Message is not matching", alert, unSuccessAlertMessage.getText().trim());
     }
+
     public void enterEmailInput(String email) {
         emailInput.clear();
         assertTrue("Email input not displayed", emailInput.isDisplayed());

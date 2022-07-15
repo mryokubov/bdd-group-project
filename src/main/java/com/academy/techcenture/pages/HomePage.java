@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
 
     public HomePage(WebDriver driver) {
@@ -28,30 +28,21 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//img[contains(@class,'logo')]")
     private WebElement logo;
 
-    public void navigateToHomePage(){
+    public void navigateToHomePage() {
         driver.get(ConfigReader.getProperty("URL"));
-        assertEquals("Titles do not match","My Store",driver.getTitle());
-        assertTrue("Logo is not displayed",logo.isDisplayed());
+        assertEquals("Titles do not match", "My Store", driver.getTitle());
+        assertTrue("Logo is not displayed", logo.isDisplayed());
     }
 
     public void clickSingInLink() {
-        assertTrue("Sign in link was not displayed", signInLink.isEnabled()) ;
+        assertTrue("Sign in link was not displayed", signInLink.isEnabled());
         actions.click(signInLink).perform();
         wait.until(ExpectedConditions.titleIs("Login - My Store"));
     }
 
-    public void clickContactUsLink(){
+    public void clickContactUsLink() {
         assertTrue("Contact us link is not displayed", contactUsLink.isDisplayed());
         contactUsLink.click();
         wait.until(ExpectedConditions.titleIs("Contact us - My Store"));
     }
-
-
-
-
-
-
-
-
-
 }

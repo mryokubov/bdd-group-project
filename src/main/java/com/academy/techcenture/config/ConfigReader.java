@@ -8,7 +8,8 @@ public class ConfigReader {
     private static Properties properties;
     private static final String CONFIG_FILE_PATH = "src/main/resources/config.properties";
 
-    private ConfigReader(){}
+    private ConfigReader() {
+    }
 
     static {
         try {
@@ -16,12 +17,12 @@ public class ConfigReader {
             properties = new Properties();
             properties.load(inputStream);
             inputStream.close();
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
     }
 
-    public static String getProperty(String keyName){
+    public static String getProperty(String keyName) {
         return properties.getProperty(keyName);
     }
 
