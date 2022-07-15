@@ -5,6 +5,7 @@ import com.academy.techcenture.pages.ContactUsPage;
 import com.academy.techcenture.pages.HomePage;
 import com.academy.techcenture.pages.LoginPage;
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -71,35 +72,39 @@ public class ContactUsStepDefinitions {
     }
 
     @Then("^user should attach a picture from path \"([^\"]*)\"$")
-    public void user_should_attach_a_picture_from_path(String arg1) throws Throwable {
-
+    public void user_should_attach_a_picture_from_path(String picture) {
+        contactUsPage.verifyAttachedPic(picture);
     }
 
     @Then("^user should enter \"([^\"]*)\" in the message input$")
-    public void user_should_enter_in_the_message_input(String arg1) throws Throwable {
+    public void user_should_enter_in_the_message_input(String message) throws Throwable {
+        contactUsPage.enterMessageInput(message);
     }
 
     @When("^user clicks on send button$")
     public void user_clicks_on_send_button() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        contactUsPage.clickSendButton();
     }
 
     @Then("^user should see success message \"([^\"]*)\"$")
-    public void user_should_see_success_message(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void user_should_see_success_message(String alertMessage) throws Throwable {
+
+        contactUsPage.verifyAlertMessage(alertMessage);
     }
 
     @And("^user enters \"([^\"]*)\" in the email input$")
-    public void userEntersInTheEmailInput(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void userEntersInTheEmailInput(String email) throws Throwable {
+        contactUsPage.enterEmailInput(email);
     }
 
     @And("^user enters \"([^\"]*)\" in the reference input$")
-    public void userEntersInTheReferenceInput(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void userEntersInTheReferenceInput(String reference) throws Throwable {
+        contactUsPage.enterOrderReferenceInput(reference);
+    }
+
+
+    @Then("^user should see error message \"([^\"]*)\"$")
+    public void userShouldSeeErrorMessage(String alertMsg) throws Throwable {
+        contactUsPage.verifyUnSuccessAlertMessage(alertMsg);
     }
 }
