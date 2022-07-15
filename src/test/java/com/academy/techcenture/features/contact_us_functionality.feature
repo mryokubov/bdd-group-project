@@ -1,3 +1,4 @@
+@regression
 Feature: Contact us functionality
 
   Scenario Outline: Test contact us as a registered customer
@@ -17,8 +18,9 @@ Feature: Contact us functionality
 
     Examples:
       | email                 | password | heading          | reference | picture                           | message                                                            | alert                                                |
-      | kevinlee123@gmail.com | Kevin123 | Customer service | CDIAWIJTG | src/java/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
-      | kevinlee123@gmail.com | Kevin123 | Webmaster        | SULXKZPMN | src/java/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
+      | kevinlee123@gmail.com | Kevin123 | Customer service | LAYJDCXBU | src/main/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
+      | kevinlee123@gmail.com | Kevin123 | Webmaster        | LAYJDCXBU | src/main/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
+
 
   Scenario Outline: Test contact us as an un-registered customer
     Given user is on the home page
@@ -34,9 +36,8 @@ Feature: Contact us functionality
 
     Examples:
       | email                 | heading          | reference | picture                           | message                                                            | alert                                                |
-      | kevinlee123@gmail.com | Customer service | CDIAWIJTG | src/java/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
-      | kevinlee123@gmail.com | Webmaster        | SULXKZPMN | src/java/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
-
+      | kevinlee123@gmail.com | Customer service | CDIAWIJTG | src/main/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
+      | kevinlee123@gmail.com | Webmaster        | SULXKZPMN | src/main/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Your message has been successfully sent to our team. |
 
   Scenario Outline: Test contact us as an un-registered negative scenario
     Given user is on the home page
@@ -48,13 +49,12 @@ Feature: Contact us functionality
     And user should attach a picture from path "<picture>"
     And user should enter "<message>" in the message input
     When user clicks on send button
-    Then user should see success message "<alert>"
+    Then user should see error message "<alert>"
 
     Examples:
       | email                 | heading          | reference | picture                           | message                                                            | alert                        |
-      | kevinlee123           | Customer service | CDIAWIJTG | src/java/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Invalid email address.       |
-      | kevinlee123@gmail.com | Webmaster        | SULXKZPMN | src/java/resources/pics/error.png |                                                                    | The message cannot be blank. |
-
+      | kevinlee123           | Customer service | LAYJDCXBU | src/main/resources/pics/error.png | I am not satisfied with this order, can I please get a replacement | Invalid email address.       |
+      | kevinlee123@gmail.com | Webmaster        | LAYJDCXBU | src/main/resources/pics/error.png |                                                                    | The message cannot be blank. |
 
   Scenario Outline: Test contact us as a registered negative scenario
     Given user is on the home page
@@ -69,10 +69,8 @@ Feature: Contact us functionality
     And user should attach a picture from path "<picture>"
     And user should enter "<message>" in the message input
     When user clicks on send button
-    Then user should see success message "<alert>"
+    Then user should see error message "<alert>"
 
     Examples:
       | email                 | password | heading          | reference | picture                           | message | alert                        |
-      | kevinlee123@gmail.com | Kevin123 | Customer service | CDIAWIJTG | src/java/resources/pics/error.png |         | The message cannot be blank. |
-
-
+      | kevinlee123@gmail.com | Kevin123 | Customer service | LAYJDCXBU | src/main/resources/pics/error.png |         | The message cannot be blank. |

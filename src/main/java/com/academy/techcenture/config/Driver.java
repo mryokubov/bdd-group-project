@@ -58,4 +58,10 @@ public class Driver {
         }
         throw  new RuntimeException("No Driver was found");
     }
+
+    public static void closeDriver() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }

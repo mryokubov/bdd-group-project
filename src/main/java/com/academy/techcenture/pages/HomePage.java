@@ -43,7 +43,8 @@ public class HomePage extends BasePage{
     public void clickContactUsLink(){
         assertTrue("Contact us link is not displayed", contactUsLink.isDisplayed());
         contactUsLink.click();
-           }
+        wait.until(ExpectedConditions.titleIs("Contact us - My Store"));
+    }
 
 
 
