@@ -5,6 +5,7 @@ import com.academy.techcenture.pages.ContactUsPage;
 import com.academy.techcenture.pages.HomePage;
 import com.academy.techcenture.pages.LoginPage;
 import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -64,7 +65,8 @@ public class ContactUsStepDefinitions {
     }
 
     @Then("^user should pick \"([^\"]*)\" from the reference dropdown$")
-    public void user_should_pick_from_the_reference_dropdown(String arg1) throws Throwable {
+    public void user_should_pick_from_the_reference_dropdown(String reference)  {
+        contactUsPage.verifyOrderReference(reference);
 
     }
 
@@ -85,6 +87,18 @@ public class ContactUsStepDefinitions {
 
     @Then("^user should see success message \"([^\"]*)\"$")
     public void user_should_see_success_message(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^user enters \"([^\"]*)\" in the email input$")
+    public void userEntersInTheEmailInput(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^user enters \"([^\"]*)\" in the reference input$")
+    public void userEntersInTheReferenceInput(String arg0) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
