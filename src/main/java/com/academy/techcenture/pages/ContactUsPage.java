@@ -1,5 +1,6 @@
 package com.academy.techcenture.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,6 +45,7 @@ public class ContactUsPage extends HomePage{
     private WebElement contactUsHeader;
 
 
+
     public void verifyUserIsOnLoginPage(){
         String contactUsTitle = driver.getTitle();
         assertEquals("Titles are not matching","Contact us - My Store", contactUsTitle);
@@ -61,6 +63,13 @@ public class ContactUsPage extends HomePage{
 
 
     }
+    public void verifyOrderReference(String reference) {
+        WebElement orderRef = driver.findElement(By.xpath("//select[@name='id_order']/option[contains(text(), '" + reference + "')]"));
+        orderRef.click();
+        assertEquals("Order reference not matching", reference, orderRef.getText().substring(0,reference.length()));
+
+    }
+
 
 
 }
