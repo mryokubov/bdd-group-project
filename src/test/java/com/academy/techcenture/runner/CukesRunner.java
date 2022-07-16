@@ -14,6 +14,6 @@ import org.junit.runner.RunWith;
         dryRun = false,
         publish = true
 )
-public class Runner {
+public class CukesRunner {
 
 }
