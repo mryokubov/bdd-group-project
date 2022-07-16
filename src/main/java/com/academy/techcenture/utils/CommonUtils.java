@@ -3,7 +3,6 @@ package com.academy.techcenture.utils;
 import com.github.javafaker.Faker;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
-
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;

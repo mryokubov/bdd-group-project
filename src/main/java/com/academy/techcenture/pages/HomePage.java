@@ -1,12 +1,10 @@
 package com.academy.techcenture.pages;
 
 import com.academy.techcenture.config.ConfigReader;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 

@@ -12,7 +12,7 @@
         <contributor>
             <organization>Techcenture Academy</organization>
             <organizationUrl>techcentureacademy.com</organizationUrl>
-            <name>Copy Pasters</name>
+            <name>Automation Ninjas</name>
         </contributor>
     </contributors>
 
@@ -23,7 +23,6 @@
             <url></url>
         </developer>
     </developers>
-
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -52,36 +51,6 @@
             <version>4.13.2</version>
             <scope>compile</scope>
         </dependency>
-
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/info.cukes/cucumber-junit &ndash;&gt;
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>1.2.5</version>
-            <scope>compile</scope>
-        </dependency>
-
-        &lt;!&ndash; https://mvnrepository.com/artifact/info.cukes/cucumber-java &ndash;&gt;
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>1.2.5</version>
-        </dependency>
-
-        &lt;!&ndash; https://mvnrepository.com/artifact/info.cukes/cucumber-core &ndash;&gt;
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-core</artifactId>
-            <version>1.2.5</version>
-        </dependency>
-
-        &lt;!&ndash; https://mvnrepository.com/artifact/info.cukes/cucumber-picocontainer &ndash;&gt;
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-picocontainer</artifactId>
-            <version>1.2.5</version>
-            <scope>compile</scope>
-        </dependency>-->
 
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
