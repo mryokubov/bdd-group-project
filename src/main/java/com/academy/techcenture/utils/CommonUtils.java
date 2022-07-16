@@ -121,6 +121,7 @@ public class CommonUtils {
             content = stripper.getText(document);
         }
         document.close();
+
         return content;
     }
 }
