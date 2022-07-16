@@ -111,7 +111,6 @@ public class CommonUtils {
         File loc = new File(directoryPath + "/" + latestFileName);
         File[] files = loc.listFiles();
         String fileName = files[0].getAbsolutePath();
-        System.out.println(fileName);
         return fileName;
     }
 
