@@ -4,16 +4,13 @@ import com.academy.techcenture.config.Driver;
 import com.academy.techcenture.pages.ContactUsPage;
 import com.academy.techcenture.pages.HomePage;
 import com.academy.techcenture.pages.LoginPage;
-import cucumber.api.PendingException;
-import cucumber.api.java.After;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 
 public class ContactUsStepDefinitions {
-
     private WebDriver driver;
     private HomePage homepage;
     private LoginPage loginPage;
@@ -45,12 +42,12 @@ public class ContactUsStepDefinitions {
     }
 
     @Then("^user clicks on Contact Us link$")
-    public void user_clicks_on_Contact_Us_link()  {
+    public void user_clicks_on_Contact_Us_link() {
         homepage.clickContactUsLink();
     }
 
     @Then("^user should be navigated to Contact Us Page$")
-    public void user_should_be_navigated_to_Contact_Us_Page()  {
+    public void user_should_be_navigated_to_Contact_Us_Page() {
         contactUsPage = new ContactUsPage(driver);
         contactUsPage.verifyUserIsOnLoginPage();
     }
@@ -61,12 +58,12 @@ public class ContactUsStepDefinitions {
     }
 
     @Then("^user email \"([^\"]*)\" should be auto-populated$")
-    public void user_email_should_be_auto_populated(String email)  {
+    public void user_email_should_be_auto_populated(String email) {
         contactUsPage.verifyEmailAutoPopulated(email);
     }
 
     @Then("^user should pick \"([^\"]*)\" from the reference dropdown$")
-    public void user_should_pick_from_the_reference_dropdown(String reference)  {
+    public void user_should_pick_from_the_reference_dropdown(String reference) {
         contactUsPage.verifyOrderReference(reference);
 
     }
@@ -101,7 +98,6 @@ public class ContactUsStepDefinitions {
     public void userEntersInTheReferenceInput(String reference) throws Throwable {
         contactUsPage.enterOrderReferenceInput(reference);
     }
-
 
     @Then("^user should see error message \"([^\"]*)\"$")
     public void userShouldSeeErrorMessage(String alertMsg) throws Throwable {

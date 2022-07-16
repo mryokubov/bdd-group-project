@@ -17,14 +17,14 @@ import java.util.HashMap;
 public class Driver {
     private static WebDriver driver;
 
-    //hide the constructor so no one can instantiate it
-    private Driver(){}
+    private Driver() {
+    }
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
         String browser = ConfigReader.getProperty("browser");
 
-        switch (browser){
+        switch (browser) {
             case "chrome":
 
                 WebDriverManager.chromedriver().setup();
@@ -51,12 +51,12 @@ public class Driver {
                 break;
         }
 
-        if (driver != null){
+        if (driver != null) {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Long.parseLong(ConfigReader.getProperty("implicitWait"))));
-            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds( Long.parseLong(ConfigReader.getProperty("pageLoadTime"))));
+            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Long.parseLong(ConfigReader.getProperty("pageLoadTime"))));
             return driver;
         }
-        throw  new RuntimeException("No Driver was found");
+        throw new RuntimeException("No Driver was found");
     }
 
     public static void closeDriver() {
